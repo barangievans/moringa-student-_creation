@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Shopping List</title>
+    <style>
+        /* Optional: Add some basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        button {
+            margin-top: 10px;
+        }
+        .purchased {
+            text-decoration: line-through;
+            color: #808080; /* Gray out purchased items */
+        }
+        .edit {
+            background-color: #f0f0f0; /* Light gray for editable items */
+        }
+    </style>
+</head>
+<body>
+    <h2>Shopping List</h2>
+    <input type="text" id="itemInput" placeholder="Enter item...">
+    <button id="addItemBtn">Add</button>
+    <button id="markPurchasedBtn">Mark Purchased</button>
+    <button id="clearListBtn">Clear List</button>
+
+    <ul id="shoppingList"></ul>
+
+    <script src="shoppingList.js"></script>
+</body>
+</html>

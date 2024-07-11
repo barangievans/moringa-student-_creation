@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping List</title>
+    <style>
+        /* Optional: Add some basic styles for better presentation */
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 5px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+        .purchased {
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+    <h1>Shopping List</h1>
+
+    <!-- Input field and Add button -->
+    <input type="text" id="itemInput" placeholder="Enter item...">
+    <button id="addItemBtn">Add Item</button>
+
+    <br><br>
+
+    <!-- Buttons for marking purchased and clearing list -->
+    <button id="markPurchasedBtn">Mark All as Purchased</button>
+    <button id="clearListBtn">Clear List</button>
+
+    <br><br>
+
+    <!-- Shopping list display -->
+    <ul id="shoppingList">
+        <li>Apples</li>
+        <li>Milk</li>
+        <li>Bread</li>
+    </ul>
+
+    <script>
+        // Initialize items array with some initial items
+        let itemsArray = [
+            { name: 'Apples', purchased: false },
+            { name: 'Milk', purchased: false },
+            { name: 'Bread', purchased: false }
+        ];
+
+        // Function to render the shopping list
+        function renderList() {
+            const shoppingList = document.getElementById('shoppingList');
+            shoppingList.innerHTML = ''; // Clear existing list items
+            itemsArray.forEach(item => {
+                const listItem = document.createElement('li');
+                listItem.textContent = item.name;
+                if (item.purchased) {
+                    listItem.classList.add('purchased');
+                }
+                shoppingList.appendChild(listItem);
+            });
+        }
+
+        // Function to add a new item to the list
+        document.getElementById('addItemBtn').addEventListener('click', function() {
+            const newItemName = document.getElementById('itemInput').value.trim();
+            if (newItemName !== '') {
+                const newItem = { name: newItemName, purchased: false };
+                itemsArray.push(newItem);
+                renderList(); // Update the shopping list display
+                document.getElementById('itemInput').value = ''; // Clear the input field
+            }
+        });
+
+        // Function to mark all items as purchased
+        document.getElementById('markPurchasedBtn').addEventListener('click', function() {
+            itemsArray.forEach(item => {
+                item.purchased = true;
+            });
+            renderList(); // Update the shopping list display
+        });
+
+        // Function to clear the entire shopping list
+        document.getElementById('clearListBtn').addEventListener('click', function() {
+            itemsArray = []; // Clear items array
+            renderList(); // Update the shopping list display
+        });
+
+        // Initial rendering of the shopping list
+        renderList();
+    </script>
+</body>
+</html>

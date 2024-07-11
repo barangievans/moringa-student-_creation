@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management</title>
+    <link rel="stylesheet" href="Activities.css"> 
+    <script src="Activities.js" defer></script> 
+</head>
+<body>
+    <header>
+        <h1>Task Management</h1>
+    </header>
+
+    <main>
+        <form id="taskForm">
+            <label for="taskDescription">Task Description:</label>
+            <input type="text" id="taskDescription" name="taskDescription" required>
+
+            <label for="priority">Priority:</label>
+            <input type="number" id="priority" name="priority" min="1" max="10" required>
+
+            <label for="user">Assignee:</label>
+            <input type="text" id="user" name="user">
+
+            <label for="duration">Duration (weeks):</label>
+            <input type="number" id="duration" name="duration" min="1" max ="10" required>
+
+            <label for="dueDate">Date Due:</label>
+            <input type="date" id="dueDate" name="dueDate" required>
+
+            <input type="submit" value="Add Task">
+        </form>
+
+        <div class="navigation">
+            <a href="page2.html">Go to Page Two</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Task Management. All rights reserved.</p>
+    </footer>
+</body>
+</html>

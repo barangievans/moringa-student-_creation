@@ -1,0 +1,46 @@
+/* CSS styles can be added here */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 10px;
+    padding: 0;
+}
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+
+form {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+    border: 2px solid #333;
+    background-color: #f4f4f4;
+}
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+input[type="text"], input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+footer {
+    background-color: #333;
+    color: blue;
+    text-align: center;
+    position:fixed;
+    bottom: 0;
+    width: 100%;
+}
